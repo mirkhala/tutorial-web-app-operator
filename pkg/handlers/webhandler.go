@@ -33,9 +33,9 @@ const (
 	WTLocationsDefault        = "https://github.com/integr8ly/tutorial-web-app-walkthroughs#v1.12.0"
 	IntegreatlyVersionDefault = "not set"
 	ClusterTypeDefault        = "not set"
-	OpenShiftVersionDefault   = "3"
+	OpenShiftVersionDefault   = "4"
 	OpenShiftAPIHostDefault   = "openshift.default.svc"
-	WebAppImage               = "quay.io/integreatly/tutorial-web-app:2.22.6"
+	WebAppImage               = "quay.io/erivasza/tutorial-web-app-custom:latest"
 	serviceName               = "tutorial-web-app"
 	routeName                 = "tutorial-web-app"
 )

@@ -6,7 +6,7 @@ parameters:
   - name: OPENSHIFT_VERSION
     description: The version of OpenShift that it will run in
     displayName: OpenShift Version
-    value: '3'
+    value: '4'
     required: true
   - name: OPENSHIFT_API
     description: The OpenShift clusters API URL (Required in OpenShift 4)
@@ -109,7 +109,7 @@ objects:
                   value: ${DATABASE_LOCATION}
                 - name: INSTALLED_SERVICES
                   value: ${INSTALLED_SERVICES}
-              image: quay.io/integreatly/tutorial-web-app:2.22.6
+              image: quay.io/erivasza/tutorial-web-app-custom:latest
               imagePullPolicy: Always
               name: tutorial-web-app
               ports:
