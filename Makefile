@@ -1,8 +1,8 @@
 SHELL=/bin/bash
 REG=quay.io
-ORG=integreatly
+ORG=erivasza
 IMAGE=tutorial-web-app-operator
-TAG=v0.0.50
+TAG=latest
 KUBE_CMD=oc apply -f
 DEPLOY_DIR=deploy
 OUT_STATIC_DIR=tmp/_output
@@ -12,8 +12,8 @@ TARGET_BIN=cmd/tutorial-web-app-operator/main.go
 .PHONY: setup/dep
 setup/dep:
 	@echo Installing golang dependencies
-	@go get golang.org/x/sys/unix
-	@go get golang.org/x/crypto/ssh/terminal
+	@go1.11.13 get golang.org/x/sys/unix
+	@go1.11.13 get golang.org/x/crypto/ssh/terminal
 	@echo Installing dep
 	curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 	@echo setup complete
@@ -25,7 +25,7 @@ setup/travis:
 
 .PHONY: code/compile
 code/compile:
-	@GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o ${OUTPUT_BIN_NAME} ${TARGET_BIN}
+	@GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go1.11.13 build -o ${OUTPUT_BIN_NAME} ${TARGET_BIN}
 
 .PHONY: code/gen
 code/gen:
@@ -51,7 +51,7 @@ image/build/push: image/build
 
 .PHONY: test/unit
 test/unit:
-	go test -v -race -cover ./pkg/...
+	go1.11.13 test -v -race -cover ./pkg/...
 
 .PHONY: cluster/prepare
 cluster/prepare:
