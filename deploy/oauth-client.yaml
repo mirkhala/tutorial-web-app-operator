@@ -1,7 +1,7 @@
+kind: OAuthClient
 apiVersion: oauth.openshift.io/v1
-grantMethod: auto
-kind: OAuthClient"
 metadata:
-  name: tutorial-web-app
+ name: tutorial-web-app
 redirectURIs:
-  - "https://"
+ - "https://tutorial-web-app-tutorial-web-app.apps.cluster-227f.227f.example.opentlc.com"
+grantMethod: auto
